@@ -6,10 +6,16 @@
 # no를 제외한 다른 키를 입력하는 경우 계속 참가자를 입력할 수 있게 진행
 
 
-bids = {}
-name = input("What is your name? ")
-bid = int(input("What is your bid? $"))
-bids[name] = bid
-add_participants = input("Are there more participants? 'yes' or 'no' ")
+go_stop =False
+while not go_stop:
+    bids = {}
+    name = input("What is your name? ")
+    bid = int(input("What is your bid? $"))
+    bids[name] = bid
+    add_participants = input("Are there more participants? 'yes' or 'no' ")
+    if add_participants == 'no':
+        go_stop = True
+
+
 
 
