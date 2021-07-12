@@ -7,7 +7,7 @@
 
 
 
-def winner():
+def winner(winner):
     high_score = 0
     win = ""
     for bidder in bids:
