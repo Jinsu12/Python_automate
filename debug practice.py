@@ -35,13 +35,21 @@ first_answer = calculation_function(num1, num2)
 
 print(f"{num1} {operation_symbol} {num2} = {first_answer}")
 
-
-# input을 한번 한거는 다시 인풋하더라도 바뀌지 않는지?
-
-operation_symbol2 = input("Pick another operation: ")
+operation_symbol = input("Pick another operation: ")  # operation symbol을 사용한 후에 이것을 불러주는 라인이 없었다.
 num3 = int(input("What is the next number? : "))
-calculation_function2 = operations[operation_symbol2]
+calculation_function = operations[operation_symbol]  # operation을 불러주는 함수를 쓰고
+second_answer = calculation_function(first_answer, num3)  # operation을 새로 불렀기 때문에 겹치지 않겠? first_answer로 바꿔준다
+print(f"{first_answer}{operation_symbol}{num3}={second_answer}")
 
-second_answer = calculation_function2(calculation_function(num1,num2),num3)
+go_stop = False
 
-print(f"{first_answer}{operation_symbol2}{num3}={second_answer}")
+while not go_stop:
+	end_of_game = input(f"Type 'y' to continue calculating with {second_answer}, or type 'n' to exit.:")
+	if end_of_game == 'y':
+		operation_symbol = input("Pick another operation: ")  # operation symbol을 사용한 후에 이것을 불러주는 라인이 없었다.
+		num3 = int(input("What is the next number? : "))
+		calculation_function = operations[operation_symbol]  # operation을 불러주는 함수를 쓰고
+		second_answer = calculation_function(second_answer, num3)  # operation을 새로 불렀기 때문에 겹치지 않겠? first_answer로 바꿔준다
+		print(f"{first_answer}{operation_symbol}{num3}={second_answer}")
+	elif end_of_game == 'n':
+		break
