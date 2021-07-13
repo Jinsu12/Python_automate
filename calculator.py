@@ -15,16 +15,22 @@ operation = {
 	'*': multiply
 }
 
+def restart():
+	num1 = float(input("What is the first number? >> "))
+	for i in operation:
+		print(i)
 
-num1 = float(input("What is the first number? >> "))
-for i in operation:
-	print(i)
-op_choice = input("Choose the operation")
-num2 = float(input("What is the next number? >> "))
-
-
-result = operation[op_choice]
-
-result2 = result(num1, num2)
-
-print(f"{num1} {op_choice} {num2} = {result2}")
+	go = True
+	while go:
+		op_choice = input("Choose the operation >> ")
+		num2 = float(input("What is the next number? >> "))
+		result = operation[op_choice]
+		result2 = result(num1, num2)
+		print(f"{num1} {op_choice} {num2} = {result2}")
+		continue_restart = input("Would you like to continue 'y' or restart 'n'? >> ")
+		if continue_restart == 'n':
+			go = False
+			restart()
+		else:
+			True
+restart()
