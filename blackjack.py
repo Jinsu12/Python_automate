@@ -24,4 +24,73 @@
 ### 21 넘어가면 패배, 안넘어가면 추가로 카드를 받을것인지 다시 확인
 #### no 선택시 비교 후 승자 선언
 
+import random
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+computer = []
+user = []
+
+computer.append(random.choice(cards))
+computer.append(random.choice(cards))
+user.append(random.choice(cards))
+user.append(random.choice(cards))
+
+print(f"Computer's cards are : {computer[0]} and X")
+
+your_card = 0
+for i in user:
+	your_card += i
+print(f"Your cards are: {user[0]} and {user[1]}")
+
+
+go_stop = True
+
+while go_stop:
+	h_or_s = input(f"Your total is {your_card}, Do you want to hit or stand? 'h' or 's' >> ")
+	if h_or_s == 'h':
+		your_card += random.choice(cards)
+		if your_card > 21:
+			card_comp = 0
+			for i in computer:
+				card_comp += int(i)
+			while card_comp <= 16:
+				card_comp += random.choice(cards)
+				if card_comp > 21:
+					go_stop = False
+					print(f"You win, you:{your_card}   computer: {card_comp}")
+				elif your_card == card_comp:
+					go_stop = False
+					print(f"Draw, you:{your_card}   computer: {card_comp}")
+			go_stop = False
+
+		else:
+			print(f"Your card is {your_card}")
+	else:
+		print(f"Your card is {your_card}")
+		go_stop = False
+
+
+card_comp = 0
+for i in computer:
+	card_comp += int(i)
+while card_comp <=16:
+	card_comp += random.choice(cards)
+
+
+if card_comp > your_card:
+	if card_comp > 21:
+		print(f"You win, you:{your_card}   computer: {card_comp}")
+	elif card_comp == your_card:
+		print(f"Draw, you:{your_card}   computer: {card_comp}")
+	else:
+		print(f"You lose, computer: {card_comp}  you: {your_card}")
+else:
+	if your_card > 21:
+		print(f"You lose, computer: {card_comp}  you: {your_card}")
+	else:
+		print(f"You win, you:{your_card}   computer: {card_comp}")
+
+# if card_comp < 17:
+# 	computer.append(random.choice(cards))
 
