@@ -317,7 +317,9 @@ print_and_close()
 time.sleep(2.5)
 pyautogui.click(click_blank)
 time.sleep(0.5)
-for i in range(2):
+d_tab()
+time.sleep(0.5)
+for i in range(3):
     pyautogui.press('down')
 time.sleep(0.5)
 find()
