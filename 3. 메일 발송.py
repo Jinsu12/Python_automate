@@ -87,9 +87,7 @@ def select_all():
 
 # 새편지 클릭하고 제목복사해서 붙여넣기
 click_newmail() # 새편지 클릭
-pyautogui.moveTo(empty_space_tocopy) # 메일 내용을 복사하기 위해서 빈 공간 클릭
-time.sleep(0.5)
-pyautogui.moveTo(empty_space_tocopy) # 메일 내용을 복사하기 위해서 빈 공간 클릭
+time.sleep(1)
 pyautogui.click(empty_space_tocopy)
 time.sleep(0.3)
 pyautogui.click(title)
