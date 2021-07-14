@@ -80,7 +80,11 @@ def click_newmail():
     pyautogui.click(new_mail)
     time.sleep(3.5)
 
-
+def select_all():
+    '''ctrl + a'''
+    pyautogui.keyDown('ctrl')
+    pyautogui.press('a')
+    pyautogui.keyUp('ctrl')
 
 # 새편지 클릭하고 제목복사해서 붙여넣기
 click_newmail() # 새편지 클릭
@@ -108,6 +112,7 @@ pyautogui.click(receiver)
 paste()
 pyautogui.press('enter')
 
+
 #메일 본문 내용 복사하기
 time.sleep(1)
 pyautogui.click(empty_space_tocopy)
@@ -119,6 +124,7 @@ paste()
 pyautogui.press('enter')
 time.sleep(0.3)
 
+
 # Dear 복사
 pyautogui.click(excel_position) # 엑셀 클릭
 starting_point()
@@ -129,13 +135,13 @@ pyautogui.press('right')
 pyautogui.keyUp('ctrl')
 copy()
 
+
 # Dear 붙여넣기
 pyautogui.click(old_mail)
-pyautogui.keyDown('ctrl')
-pyautogui.press('a')
-pyautogui.keyUp('ctrl')
+select_all()
 paste()
 select_and_copy()
+
 
 # 메일 내용으로 이동
 pyautogui.click(sending_mail)
@@ -146,6 +152,7 @@ for i in range(4):
 paste()
 for i in range(2):
     pyautogui.press('enter')
+
 
 #파일 첨부하기
 pick_drop()
