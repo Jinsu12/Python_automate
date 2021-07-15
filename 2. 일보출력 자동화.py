@@ -58,7 +58,7 @@ def change_module():
     pyautogui.click(change_module1)
     time.sleep(1)
     pyautogui.click(change_module2)
-    time.sleep(10)
+    time.sleep(6)
 
 
 def print_and_close():
@@ -66,7 +66,7 @@ def print_and_close():
     pyautogui.click(click_preview)
     time.sleep(3)  # 출력되는 시간 보고 이후에 더 줄이기
 #     pyautogui.click(click_print)
-    time.sleep(5)  # 출력되는 시간 보고 이후에 더 줄이기
+    time.sleep(2.5)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_close)
     time.sleep(1.5)
     pyautogui.click(click_blank)
@@ -76,9 +76,9 @@ def print_and_close2():
     pyautogui.click(click_preview)
     time.sleep(3)  # 출력되는 시간 보고 이후에 더 줄이기
 #     pyautogui.click(click_print)
-    time.sleep(4)  # 출력되는 시간 보고 이후에 더 줄이기
+    time.sleep(2)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.press('enter')
-    time.sleep(2)
+    time.sleep(2.5)
     pyautogui.click(click_close)
     time.sleep(1.5)
     pyautogui.click(click_blank)
@@ -90,7 +90,7 @@ def fit_and_print():
     time.sleep(2)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_fit_size)
 #     pyautogui.click(click_print)
-    time.sleep(5)  # 출력되는 시간 보고 이후에 더 줄이기
+    time.sleep(2.5)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_close)
     time.sleep(1.5)
     pyautogui.click(click_blank)
@@ -174,7 +174,7 @@ pyautogui.click(daily_sales)
 time.sleep(2.5)
 pyautogui.click(click_blank)
 find()
-time.sleep(4)
+time.sleep(6)
 fit_and_print()
 
 
@@ -325,6 +325,15 @@ find()
 time.sleep(2)
 print_and_close()
 
+'''출하일보 출력'''
+## 출하일보
+pyautogui.click(daily_sales)
+time.sleep(2.5)
+pyautogui.click(click_blank)
+find()
+time.sleep(6)
+fit_and_print()
+
 
 '''회계모듈이동'''
 change_module()
@@ -407,10 +416,9 @@ for i in range(3):
 pyautogui.press('down')
 pyautogui.press('down')
 find()
-
 time.sleep(2)
 fit_and_print()
-time.sleep(3)
+time.sleep(2)
 
 
 '''수금현황 출력'''
@@ -430,7 +438,7 @@ pyautogui.typewrite(today)
 find()
 time.sleep(2.5)
 print_and_close()
-time.sleep(3)
+time.sleep(2)
 
 
 '''기간별 미수금 현황 출력'''
