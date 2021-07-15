@@ -65,8 +65,8 @@ def print_and_close():
     """출력 미리보기 누른 후 인쇄 후 인쇄창 닫아주는 함수"""
     pyautogui.click(click_preview)
     time.sleep(3)  # 출력되는 시간 보고 이후에 더 줄이기
-    pyautogui.click(click_print)
-    time.sleep(8)  # 출력되는 시간 보고 이후에 더 줄이기
+#     pyautogui.click(click_print)
+    time.sleep(5)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_close)
     time.sleep(1.5)
     pyautogui.click(click_blank)
@@ -75,8 +75,8 @@ def print_and_close2():
     """출력 미리보기 누른 후 인쇄 후 인쇄창 닫아주는 함수"""
     pyautogui.click(click_preview)
     time.sleep(3)  # 출력되는 시간 보고 이후에 더 줄이기
-    pyautogui.click(click_print)
-    time.sleep(6)  # 출력되는 시간 보고 이후에 더 줄이기
+#     pyautogui.click(click_print)
+    time.sleep(4)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.press('enter')
     time.sleep(2)
     pyautogui.click(click_close)
@@ -89,8 +89,8 @@ def fit_and_print():
     pyautogui.click(click_preview)
     time.sleep(2)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_fit_size)
-    pyautogui.click(click_print)
-    time.sleep(8)  # 출력되는 시간 보고 이후에 더 줄이기
+#     pyautogui.click(click_print)
+    time.sleep(5)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_close)
     time.sleep(1.5)
     pyautogui.click(click_blank)
@@ -152,7 +152,7 @@ def sort_balance2():
     pyautogui.press('enter')
 
 
-'''팀별 영업집계표 출력'''
+# '''팀별 영업집계표 출력'''
 
 ## 팀별 영업집계표 출력
 time.sleep(1)
@@ -310,9 +310,9 @@ time.sleep(3)
 
 
 '''여기부터 패키징'''
-## 팀별 영업집계표 출력
-# time.sleep(1)
-# pyautogui.click(team_sales)
+# 팀별 영업집계표 출력
+time.sleep(1)
+pyautogui.click(team_sales)
 time.sleep(2.5)
 pyautogui.click(click_blank)
 time.sleep(0.5)
@@ -340,7 +340,7 @@ pyautogui.click(click_blank)
 time.sleep(1)
 pyautogui.press('tab')
 time.sleep(1)
-for i in range(3):
+for i in range(2):
     pyautogui.press('down')
 time.sleep(1)
 find()
@@ -399,8 +399,8 @@ time.sleep(3)
 '''주문서 현황 출력'''
 ## 주문서 현황
 time.sleep(1)
-# pyautogui.click(order_status)
-# time.sleep(2.5)
+pyautogui.click(order_status)
+time.sleep(2.5)
 pyautogui.click(click_blank)
 for i in range(3):
     pyautogui.press('tab')
@@ -416,8 +416,8 @@ time.sleep(3)
 '''수금현황 출력'''
 # 수금현황
 time.sleep(1)
-# pyautogui.click(receipt_status)
-# time.sleep(2.5)
+pyautogui.click(receipt_status)
+time.sleep(2.5)
 pyautogui.click(click_blank)
 d_tab()
 pyautogui.press('down')
@@ -459,3 +459,4 @@ sort_balance2()
 time.sleep(0.8)
 fit_and_print()
 time.sleep(3)
+
