@@ -65,7 +65,7 @@ def print_and_close():
     """출력 미리보기 누른 후 인쇄 후 인쇄창 닫아주는 함수"""
     pyautogui.click(click_preview)
     time.sleep(3)  # 출력되는 시간 보고 이후에 더 줄이기
-#     pyautogui.click(click_print)
+    pyautogui.click(click_print)
     time.sleep(2.5)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_close)
     time.sleep(1.5)
@@ -75,7 +75,7 @@ def print_and_close2():
     """출력 미리보기 누른 후 인쇄 후 인쇄창 닫아주는 함수"""
     pyautogui.click(click_preview)
     time.sleep(3)  # 출력되는 시간 보고 이후에 더 줄이기
-#     pyautogui.click(click_print)
+    pyautogui.click(click_print)
     time.sleep(2)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.press('enter')
     time.sleep(2.5)
@@ -89,7 +89,7 @@ def fit_and_print():
     pyautogui.click(click_preview)
     time.sleep(2)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_fit_size)
-#     pyautogui.click(click_print)
+    pyautogui.click(click_print)
     time.sleep(2.5)  # 출력되는 시간 보고 이후에 더 줄이기
     pyautogui.click(click_close)
     time.sleep(1.5)
@@ -104,22 +104,22 @@ def reset_and_blank():
 
 
 def ten_down():
-    for i in range(1,11):
+    for i in range(10):
         pyautogui.press('down')
 
 
 def fifty_down():
-    for i in range(1, 6):
+    for i in range(5):
         ten_down()
 
 
 def ten_up():
-    for i in range(1, 11):
+    for i in range(10):
         pyautogui.press('up')
 
 
 def fifty_up():
-    for i in range(1, 51):
+    for i in range(50):
         pyautogui.press('up')
 
 
@@ -130,7 +130,7 @@ def find():
 
 def five_tab():
     '''tab키 5번'''
-    for i in range(1, 6):
+    for i in range(5):
         pyautogui.press('tab')
 
 def d_tab():
@@ -143,7 +143,7 @@ def sort_balance2():
     '''내림차순으로 바꿔주는 함수'''
     pyautogui.rightClick(sort_balance)
     time.sleep(0.3)
-    for i in range(1, 7):
+    for i in range(6):
         pyautogui.press('down')
     time.sleep(0.5)
     pyautogui.press('right')
@@ -292,7 +292,7 @@ time.sleep(0.5)
 pyautogui.press('down')
 time.sleep(0.5)
 d_tab()
-for i in range (1, 25):
+for i in range (24):
     pyautogui.press('down')
 pyautogui.press('tab')
 pyautogui.press('down')
@@ -454,7 +454,7 @@ pyautogui.press('down')
 pyautogui.press('down')
 time.sleep(0.5)
 d_tab()
-for i in range (1, 25):
+for i in range (24):
     pyautogui.press('down')
 pyautogui.press('tab')
 pyautogui.press('down')
@@ -467,4 +467,3 @@ sort_balance2()
 time.sleep(0.8)
 fit_and_print()
 time.sleep(3)
-
