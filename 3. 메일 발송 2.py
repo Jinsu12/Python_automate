@@ -24,6 +24,25 @@ pick_point = 950, 250  # 첨부파일 픽업 위치
 drop_point = 700, 900  # 첨부파일 드롭 위치
 
 
+
+def cc():
+    '''참조'''
+    pyautogui.click(receiver)
+    paste()
+    pyautogui.hotkey('shift', 'tab', 'down', 'tab', 'enter')
+    
+    
+def cc():
+    '''참조'''
+    pyautogui.click(receiver)
+    time.sleep(0.5)
+    paste()
+    time.sleep(0.5)
+    pyautogui.hotkey('shift', 'tab', 'down')
+    time.sleep(0.5)
+    pyautogui.hotkey('tab', 'enter')
+    
+    
 def starting_point():
     '''엑셀 시작 위치로 이동 셀 A1로'''
     pyautogui.keyDown('ctrl')
@@ -41,6 +60,7 @@ def pick_drop():
     pyautogui.moveTo(drop_point)
     pyautogui.mouseUp()
 
+    
 def select_company():
     '''엑셀파일에서 메일보낼 업체 선택'''
     for i in range(1, company+1):
@@ -94,6 +114,7 @@ def excel_pick(times):
         pyautogui.press('right')
     pyautogui.keyUp('ctrl')
 
+    
 # 새편지 클릭하고 제목복사해서 붙여넣기
 click_newmail()  # 새편지 클릭
 pyautogui.click(empty_space_tocopy)
@@ -121,6 +142,10 @@ paste()
 pyautogui.press('enter')
 time.sleep(0.3)
 
+# 참조 복사
+excel_pick(3)
+copy()
+cc()
 
 # Dear 복사
 excel_pick(2)
@@ -132,6 +157,7 @@ select_all()
 paste()
 select_and_copy()
 
+
 # 메일 내용으로 이동
 pyautogui.click(sending_mail)
 pyautogui.press('pageup')
@@ -142,5 +168,5 @@ paste()
 for i in range(2):
     pyautogui.press('enter')
 
-# 파일 첨부하기
+
 pick_drop()
