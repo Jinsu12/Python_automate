@@ -29,44 +29,17 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
-
 is_on = True
 profit = 0
 
 
-def enough_resources(ingredients):
-    for i in ingredients:
-        if ingredients[i] >= resources[i]:
-            print(f"Sorry, we do not have enough {i}")
+def enough_ingredients(order_ingredients):
+    for items in order_ingredients:
+        if order_ingredients[items] > resources[items]:
+            print(f"Sorry we do not have enough {items}")
             return False
-    return True
-
-
-def collect_money():
-    print("insert coins >> ")
-    total = int(input("How many quarters? >> ")) * 0.25
-    total += int(input("How many quarters? >> ")) * 0.10
-    total += int(input("How many quarters? >> ")) * 0.05
-    total += int(input("How many quarters? >> ")) * 0.01
-    return total
-
-
-def transaction_successful(price, payment):
-    if payment >= price:
-        change = round(payment - price, 3)
-        print(f"Here is your change ${change}")
-        global profit
-        profit += price
-        return True
-    else:
-        print("Sorry, you have not enough monet")
-        return False
-
-
-def make_coffee(drink_name, order_ingredients):
-    for item in order_ingredients:
-        resources[item] -= order_ingredients[item]
-    print(f"Here is your {drink_name}")
+        else:
+            return True
 
 
 while is_on:
@@ -80,9 +53,4 @@ while is_on:
         print(f"Money: ${profit}")
     else:
         drink = MENU[choice]
-        if enough_resources(drink["ingredients"]):
-            payment = collect_money()
-            if transaction_successful(drink["cost"],payment):
-                make_coffee(choice, drink["ingredients"])
-
-
+        print(enough_ingredients(drink['ingredients']))
