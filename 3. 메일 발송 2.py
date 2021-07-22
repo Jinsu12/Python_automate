@@ -24,7 +24,6 @@ pick_point = 950, 250  # 첨부파일 픽업 위치
 drop_point = 700, 900  # 첨부파일 드롭 위치
 
 
-
 def cc():
     '''참조'''
     pyautogui.click(receiver)
