@@ -1,0 +1,85 @@
+'''
+자금수지계획 등록
+1) 부서별 자금계획 등록
+2) 자금 수지계획 현황 -> 출력
+
+
+
+'''
+부서별_자금계획_등록 = 118, 151
+회계기간 = 582, 182
+회계기간_입력 = input("회계기간을 입력해주세요 예)202108 >> ")
+number = int(input("자금계획 전체 건수를 입력해주세요 출금+입금 = 30 >> "))
+new = 1542, 136
+유형 = 524, 650
+계획일자 = 999, 644
+
+#자금코드 좌표
+a = 637
+b = 649
+
+#row 증가량
+increase = 30
+sum_inc = 0
+
+# 적요 좌표
+a1 = 1691
+b1 = 650
+
+
+'''함수'''
+
+
+def select유형():
+    if 유형선택 == '출금':
+        pyautogui.click(524, 650)
+        pyautogui.press('down')
+        pyautogui.press('enter')
+    if 유형선택 == '입금':
+        pyautogui.click(524, 650)
+        pyautogui.press('down')
+        pyautogui.press('down')
+        pyautogui.press('enter')
+    
+    
+def 수출통관비용_선택(increase):
+    pyautogui.click(a, (b+increase))
+    time.sleep(0.5)
+    pyautogui.scroll(-1500)
+    pyautogui.click(a, (b+14+increase))
+    pyautogui.press('up')
+    
+
+
+
+def 적요입력(increase):
+    pyautogui.click(a1, (b1+increase))
+    time.sleep(0.3)
+    pyautogui.typewrite('tncnfwjdtksqldyd $2,500')   
+
+pyautogui.click(부서별_자금계획_등록)
+pyautogui.click(회계기간)
+pyautogui.typewrite(회계기간_입력)
+time.sleep(2.5)
+
+for i in range(number):
+    pyautogui.click(new)
+    time.sleep(0.4)
+    
+
+for i in range(number):
+    수출통관비용_선택(sum_inc)
+    sum_inc += increase
+time.sleep(0.5)
+
+sum_inc = 0
+
+for i in range(number):
+    적요입력(sum_inc)
+    sum_inc += increase
+    time.sleep(0.2)
+    
+pyautogui.press('tab')
+time.sleep(0.2)
+for i in range(number-1):
+    pyautogui.press('up')
