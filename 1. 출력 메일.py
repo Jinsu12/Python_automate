@@ -45,7 +45,7 @@ def wait_blank_click():
     
 
 def print_process():
-    for i in range(numb2)
+    for i in range(numb2):
         time.sleep(1.5)
         pyautogui.moveTo(900, 900, 1)
         full_screen()
